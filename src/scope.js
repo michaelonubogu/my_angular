@@ -23,7 +23,7 @@ function Scope() {
             oldValue = watcher.last;
             if(newValue !== oldValue){
                 watcher.last = newValue;
-                watcher.listener(newValue, oldValue, self);
+                watcher.listener(newValue, (oldValue === initWatchVal ? newValue : oldValue), self);
             }
         });
     };
